@@ -1,0 +1,21 @@
+
+sylius_admin_customers_age:
+    path: /admin/customers/age
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.customer:indexAction
+        _sylius:
+            template: index.html.twig
+
+            repository:
+                method: getAllAgeDefined
+            criteria: false
+            grid: sylius_admin_customer
+        paginate: false
+sylius_admin:
+    resource: "@SyliusAdminBundle/Resources/config/routing.yml"
+    prefix: /admin
+
+
+
+
